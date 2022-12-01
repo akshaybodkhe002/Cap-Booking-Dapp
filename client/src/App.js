@@ -16,7 +16,7 @@ import Web3 from 'web3';
 const hist = createBrowserHistory();
 
 class App extends Component {
-    constructor () {
+    constructor() {
         super();
         this.state = {
             'account': null,
@@ -46,7 +46,7 @@ class App extends Component {
 
     handleInputChange = (e) => {
         this.setState({
-            [ e.target.id ]: e.target.value,
+            [e.target.id]: e.target.value,
         })
     }
 
@@ -54,9 +54,9 @@ class App extends Component {
         const web3 = window.web3
         const accounts = await web3.eth.getAccounts();
         console.log(accounts);
-        this.setState({ 'account': accounts[ 0 ] });
+        this.setState({ 'account': accounts[0] });
         const networkId = await web3.eth.net.getId();
-        const networkData = RideManager.networks[ networkId ];
+        const networkData = RideManager.networks[networkId];
         if (networkData) {
             const rideManager = new web3.eth.Contract(RideManager.abi, networkData.address);
             this.setState({ 'rideManager': rideManager, 'loading': false, 'web3': web3 });
@@ -75,7 +75,7 @@ class App extends Component {
                     <Route
                         path="/admin"
                         render={(props) => (
-                            <Admin rideManager={this.state.rideManager} web3={this.state.web3} account={this.state.account}/>
+                            <Admin rideManager={this.state.rideManager} web3={this.state.web3} account={this.state.account} />
                         )}
                     />
                     <Redirect from="/" to="/admin/dashboard" />
@@ -86,3 +86,4 @@ class App extends Component {
 }
 
 export default App;
+

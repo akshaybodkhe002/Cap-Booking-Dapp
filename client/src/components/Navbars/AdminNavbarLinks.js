@@ -54,18 +54,18 @@ export default function AdminNavbarLinks() {
           formControlProps={{
             className: classes.margin + " " + classes.search
           }}
-          inputProps={{
-            placeholder: "Search",
-            inputProps: {
-              "aria-label": "Search"
-            }
-          }}
+          // inputProps={{
+          //   placeholder: "Search",
+          //   inputProps: {
+          //     "aria-label": "Search"
+          //   }
+          // }}
         />
-        <Button color="white" aria-label="edit" justIcon round>
+        {/* <Button color="white" aria-label="edit" justIcon round>
           <Search />
-        </Button>
+        </Button> */}
       </div>
-      <Button
+      {/* <Button
         color={window.innerWidth > 959 ? "transparent" : "white"}
         justIcon={window.innerWidth > 959}
         simple={!(window.innerWidth > 959)}
@@ -76,9 +76,9 @@ export default function AdminNavbarLinks() {
         <Hidden mdUp implementation="css">
           <p className={classes.linkText}>Dashboard</p>
         </Hidden>
-      </Button>
+      </Button> */}
       <div className={classes.manager}>
-        <Button
+        {/* <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
           simple={!(window.innerWidth > 959)}
@@ -94,7 +94,7 @@ export default function AdminNavbarLinks() {
               Notification
             </p>
           </Hidden>
-        </Button>
+        </Button> */}
         <Poppers
           open={Boolean(openNotification)}
           anchorEl={openNotification}
@@ -115,7 +115,7 @@ export default function AdminNavbarLinks() {
                   placement === "bottom" ? "center top" : "center bottom"
               }}
             >
-              <Paper>
+              {/* <Paper>
                 <ClickAwayListener onClickAway={handleCloseNotification}>
                   <MenuList role="menu">
                     <MenuItem
@@ -150,13 +150,13 @@ export default function AdminNavbarLinks() {
                     </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
-              </Paper>
+              </Paper> */}
             </Grow>
           )}
         </Poppers>
       </div>
       <div className={classes.manager}>
-        <Button
+        {/* <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
           simple={!(window.innerWidth > 959)}
@@ -169,7 +169,7 @@ export default function AdminNavbarLinks() {
           <Hidden mdUp implementation="css">
             <p className={classes.linkText}>Profile</p>
           </Hidden>
-        </Button>
+        </Button> */}
         <Poppers
           open={Boolean(openProfile)}
           anchorEl={openProfile}

@@ -21,25 +21,23 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import Tasks from "components/Tasks/Tasks.js";
-import CustomTabs from "components/CustomTabs/CustomTabs.js";
-import Danger from "components/Typography/Danger.js";
+
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
-import CardIcon from "components/Card/CardIcon.js";
+
 import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
+
 import StepLabel from '@material-ui/core/StepLabel';
 import StepContent from '@material-ui/core/StepContent';
 import Paper from '@material-ui/core/Paper';
-import { bugs, website, server } from "variables/general.js";
+
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 import { LocationCity, LocationOn, TvRounded } from "@material-ui/icons";
 import { CardActionArea, TextField } from "@material-ui/core";
-import Input from '@material-ui/core/Input';
+
 import Ride from '../../contracts/Ride.json';
 import axios from 'axios';
 import QRCode from 'qrcode.react';
@@ -234,14 +232,9 @@ export default function RideShareSteps(props) {
               let data = await rideManager.methods.getRiderInfo(account).call({ 'from': account });
               console.log(data);
               setRideContractAddress(data[5][data[5].length - 1]);
-              // isLoading(false);
-              // let a = '';
-              // while (a === '') {
-              //   a = qrcodeResult;
-              // }
+             
               setActiveStep((prevActiveStep) => prevActiveStep + 1);
             });
-          // setActiveStep((prevActiveStep) => prevActiveStep + 1);
 
         }
       } else if (activeStep === 2) {
