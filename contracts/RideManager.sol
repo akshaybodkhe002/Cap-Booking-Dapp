@@ -1,4 +1,4 @@
-pragma solidity >=0.4.21 <0.7.0;
+pragma solidity >=0.8.15;
 pragma experimental ABIEncoderV2;
 
 import './Ride.sol';
