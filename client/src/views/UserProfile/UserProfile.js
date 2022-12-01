@@ -89,6 +89,8 @@ export default function UserProfile(props) {
     name: "",
     contact: "",
     email: "",
+    address:"",
+    password: ""
   })
 
 
@@ -120,6 +122,8 @@ export default function UserProfile(props) {
     localStorage.setItem('name', formData.name)
     localStorage.setItem('contact', formData.contact)
     localStorage.setItem('email', formData.email)
+    localStorage.setItem('address', formData.address)
+    localStorage.setItem('password', formData.password)
     localStorage.setItem('type', "0")
     
 
@@ -139,7 +143,7 @@ export default function UserProfile(props) {
 
   const collectData = async () => {
     console.warn("Here is the data :-> ")
-    console.warn(formData.name, formData.email, formData.contact);
+    console.warn(formData.name, formData.email, formData.contact, formData.address, formData.password );
     let result = await fetch('http://localhost:3000/registerUser', {
       method: 'post',
       body: JSON.stringify({ formData }),
@@ -213,6 +217,32 @@ export default function UserProfile(props) {
                         }}
                         labelText="Email Address"
                         id="email"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={12}>
+                      <CustomInput
+                        inputProps={{
+                          onChange: (e) => handleChange(e),
+                          type: "text"
+                        }}
+                        labelText="Enter your Address"
+                        id="address"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={12}>
+                      <CustomInput
+                        inputProps={{
+                          onChange: (e) => handleChange(e),
+                          type: "text"
+                        }}
+                        labelText="Enter Password"
+                        id="password"
                         formControlProps={{
                           fullWidth: true
                         }}

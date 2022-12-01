@@ -20,7 +20,9 @@ const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
 const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 
 
+
 const Maps = compose(
+  
   withProps({
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyChykMQlbWKcQy-qixkVnXCrGVoy-vdlM4&v=3.exp&libraries=geometry,drawing,places",
@@ -34,6 +36,8 @@ const Maps = compose(
   lifecycle({
     componentDidMount() {
       const DirectionsService = new google.maps.DirectionsService();
+
+      let dis;
 
       DirectionsService.route(
         {

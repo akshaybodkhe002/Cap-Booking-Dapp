@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './drivers.css';
 
 export default function ProductList() {
 
@@ -17,9 +18,9 @@ export default function ProductList() {
 
 
     return (
-        <div className="Drivers-list">
+        <div className="Drivers-list" >
             <h3>All Drivers List</h3>
-            <ul>
+            <ul className="Drivers-list-main-col">
                 <li>S.no</li>
                 <li>Name</li>
                 <li>Price</li>
